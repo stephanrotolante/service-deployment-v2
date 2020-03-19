@@ -1,7 +1,0 @@
-com/example/demo/DemoApplication.class
-com/example/demo/domain/Customer.class
-com/example/demo/repositories/CustomerRepository.class
-com/example/demo/controllers/CustomerController.class
-com/example/demo/service/CustomerServiceImpl.class
-com/example/demo/service/CustomerService.class
-com/example/demo/bootstrap/BootStrapData.class

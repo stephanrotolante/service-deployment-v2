@@ -1,4 +1,4 @@
 FROM openjdk:8
-COPY ./target/docker-spring-boot.jar ./
+COPY ./docker-spring-boot.jar ./
 EXPOSE 8080
 CMD [ "java", "-jar", "docker-spring-boot.jar" ]
