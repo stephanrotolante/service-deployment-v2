@@ -1,0 +1,29 @@
+version: '3'
+services: 
+    mongo:
+        image: mongo
+        restart: always
+        environment: 
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: example
+        ports:
+            - "27017:27017"
+    node-service:
+        restart: always
+        build: 
+            context: ./service/node-service
+            dockerfile: Dockerfile.dev
+        environment: 
+            MONGO_USERNAME: root
+            MONGO_PASS: example
+            MONGO_PORT: 27017
+            MONGO_HOST: mongo
+        ports: 
+            - '3535:3535'
+    java-service:
+        restart: always
+        build: 
+            context: ./service/java-service
+            dockerfile: Dockerfile.dev
+        ports: 
+            - '8080:8080'
