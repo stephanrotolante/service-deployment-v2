@@ -4,7 +4,7 @@
     "containerDefinitions": [
       {
         "name": "services",
-        "image": "stephanrotolante/node-services",
+        "image": "stephanrotolante/node-service",
         "hostname": "node-service",
         "essential": true,
         "portMappings": [

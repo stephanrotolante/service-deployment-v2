@@ -20,8 +20,8 @@ deploy:
     edge: true
     provider: elasticbeanstalk
     region: us-west-2
-    app: services
-    env: services-env
+    app: node-service
+    env: nodeservice-env
     bucket_name: elasticbeanstalk-us-west-2-777758686357
     bucket_path: node-service
     on:
