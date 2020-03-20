@@ -1,0 +1,16 @@
+language: generic 
+sudo: required
+services:
+  - docker
+
+before_install:
+
+script:
+
+
+after_success:
+    - docker build -t stephanrotolante/node-service ./service/node-service
+
+    - echo "$DOCKER_PASS" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+    - docker push stephanrotolante/node-service
