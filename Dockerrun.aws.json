@@ -1,0 +1,18 @@
+
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+      {
+        "name": "services",
+        "image": "stephanrotolante/node-services",
+        "hostname": "node-service",
+        "essential": true,
+        "portMappings": [
+          {
+            "hostPort": 3535,
+            "containerPort": 3535
+          }
+        ]
+      }
+    ]
+  }

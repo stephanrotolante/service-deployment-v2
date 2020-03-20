@@ -14,3 +14,17 @@ after_success:
     - echo "$DOCKER_PASS" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
     - docker push stephanrotolante/node-service
+
+
+deploy:
+    edge: true
+    provider: elasticbeanstalk
+    region: us-west-2
+    app: services
+    env: services-env
+    bucket_name: elasticbeanstalk-us-west-2-777758686357
+    bucket_path: services-multi
+    on:
+        branch: master
+    access_key_id: $AWS_ID
+    secret_access_key: $AWS_SECRET
