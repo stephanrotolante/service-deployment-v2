@@ -23,7 +23,7 @@ deploy:
     app: services
     env: services-env
     bucket_name: elasticbeanstalk-us-west-2-777758686357
-    bucket_path: services-multi
+    bucket_path: node-service
     on:
         branch: master
     access_key_id: $AWS_ID
