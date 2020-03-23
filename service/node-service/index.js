@@ -21,18 +21,19 @@ const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASS}@${MONGO_HOST}:${MONGO_POR
 app.get('/', (req,res) => {
     
     const { message } = req.body;
-    res.send({message});
-    // mongo.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err,client) => {
-    //     if(err){
-    //         res.send({
-    //             message:'cannot connect'
-    //         })
-    //     } else {
-    //         res.send({
-    //             message:'made a connection but hitting /'
-    //         })
-    //     }
-    // });
+
+    mongo.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err,client) => {
+        if(err){
+            res.send({
+                message:'cannot connect'
+            })
+        } else {
+            res.send({
+                message,
+                status:"you connected"
+            })
+        }
+    });
 });
 
 app.listen(80, () => console.log("Server is up and running"))
