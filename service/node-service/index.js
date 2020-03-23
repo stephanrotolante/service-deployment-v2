@@ -48,6 +48,6 @@ app.get('/root', (req,res) => {
     // });
 });
 
-app.listen(3535, () => console.log("Server is up and running"))
+app.listen(80, () => console.log("Server is up and running"))
 
 

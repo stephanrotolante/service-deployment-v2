@@ -10,8 +10,8 @@
         "memory": 128,
         "portMappings": [
           {
-            "hostPort": 3535,
-            "containerPort": 3535
+            "hostPort": 80,
+            "containerPort": 80
           }
         ]
       }

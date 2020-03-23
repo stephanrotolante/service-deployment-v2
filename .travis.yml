@@ -10,6 +10,7 @@ script:
 
 after_success:
     - docker build -t stephanrotolante/node-service ./service/node-service
+    # - docker build -t stephanrotolante/nginx-node-service ./service/nginx
 
     - echo "$DOCKER_PASS" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
