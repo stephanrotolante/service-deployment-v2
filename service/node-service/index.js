@@ -19,7 +19,9 @@ const {
 const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASS}@${MONGO_HOST}:${MONGO_PORT}`;
 
 app.get('/', (req,res) => {
-    res.send({message: 'you are working'});
+    
+    const { message } = req.body;
+    res.send({message});
     // mongo.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err,client) => {
     //     if(err){
     //         res.send({
@@ -28,21 +30,6 @@ app.get('/', (req,res) => {
     //     } else {
     //         res.send({
     //             message:'made a connection but hitting /'
-    //         })
-    //     }
-    // });
-});
-
-app.get('/root', (req,res) => {
-    res.send({message: 'you are working'});
-    // mongo.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err,client) => {
-    //     if(err){
-    //         res.send({
-    //             message:'cannot connect'
-    //         })
-    //     } else {
-    //         res.send({
-    //             message:'made a connection but hitting /root'
     //         })
     //     }
     // });
