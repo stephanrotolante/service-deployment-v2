@@ -1,4 +1,4 @@
 FROM openjdk:8
 COPY ./docker-spring-boot.jar ./
-EXPOSE 8080
+EXPOSE 80
 CMD [ "java", "-jar", "docker-spring-boot.jar","--server.port=80" ]
