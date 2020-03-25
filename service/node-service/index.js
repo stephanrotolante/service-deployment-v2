@@ -36,6 +36,10 @@ app.get('/', (req,res) => {
     });
 });
 
-app.listen(80, () => console.log("Server is up and running"))
+app.get('/test', (req,res) => {
+    res.setHeader(200).send({message:'Stephan you are an idiot sometimes'})
+});
+
+app.listen(3535, () => console.log("Server is up and running"))
 
 
