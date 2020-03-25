@@ -20,28 +20,28 @@ after_success:
     - docker push stephanrotolante/java-service
 
 
-deploy:
-    edge: true
-    provider: elasticbeanstalk
-    region: us-west-2
-    app: node-service
-    env: NodeService-env
-    bucket_name: elasticbeanstalk-us-west-2-777758686357
-    bucket_path: node-service
-    on:
-        branch: master
-    access_key_id: $AWS_ID
-    secret_access_key: $AWS_SECRET
-
 # deploy:
 #     edge: true
 #     provider: elasticbeanstalk
 #     region: us-west-2
-#     app: java-service
-#     env: JavaService-env
+#     app: node-service
+#     env: NodeService-env
 #     bucket_name: elasticbeanstalk-us-west-2-777758686357
-#     bucket_path: java-service
+#     bucket_path: node-service
 #     on:
 #         branch: master
 #     access_key_id: $AWS_ID
 #     secret_access_key: $AWS_SECRET
+
+deploy:
+    edge: true
+    provider: elasticbeanstalk
+    region: us-west-2
+    app: java-service
+    env: JavaService-env
+    bucket_name: elasticbeanstalk-us-west-2-777758686357
+    bucket_path: java-service
+    on:
+        branch: master
+    access_key_id: $AWS_ID
+    secret_access_key: $AWS_SECRET

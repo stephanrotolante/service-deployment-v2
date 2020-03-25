@@ -4,14 +4,14 @@
     "containerDefinitions": [
       {
         "name": "services",
-        "image": "stephanrotolante/node-service",
-        "hostname": "node-service",
+        "image": "stephanrotolante/java-service",
+        "hostname": "java-service",
         "essential": true,
         "memory": 128,
         "portMappings": [
           {
-            "hostPort": 3535,
-            "containerPort": 3535
+            "hostPort": 8080,
+            "containerPort": 8080
           }
         ]
       }
