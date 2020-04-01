@@ -32,6 +32,9 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
   whatever:
+    
+    runs-on: ubuntu-latest
+    
     steps:
       - name: test
         run: echo Nothing
