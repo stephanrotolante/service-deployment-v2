@@ -11,7 +11,7 @@ jobs:
     - name: See file struture
       run: ls
     - name: See file struture
-    run: cd ./service/node-service/
+      run: cd ./service/node-service/
     - name: set environment variable
       run: package='package.json'
     - name: Hello world action step
