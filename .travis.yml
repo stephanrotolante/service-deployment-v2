@@ -1,47 +1,47 @@
-language: generic 
-sudo: required
-services:
-  - docker
+# language: generic 
+# sudo: required
+# services:
+#   - docker
 
-before_install:
+# before_install:
 
-script:
+# script:
 
 
-after_success:
-    # Build the images
-    - docker build -t stephanrotolante/node-service ./service/node-service
-    - docker build -t stephanrotolante/java-service ./service/java-service
+# after_success:
+#     # Build the images
+#     - docker build -t stephanrotolante/node-service ./service/node-service
+#     - docker build -t stephanrotolante/java-service ./service/java-service
 
-    - echo "$DOCKER_PASS" | docker login -u "$DOCKER_USERNAME" --password-stdin
+#     - echo "$DOCKER_PASS" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-    # Push the images to docker hub
-    - docker push stephanrotolante/node-service
-    - docker push stephanrotolante/java-service
+#     # Push the images to docker hub
+#     - docker push stephanrotolante/node-service
+#     - docker push stephanrotolante/java-service
 
+
+# # deploy:
+# #     edge: true
+# #     provider: elasticbeanstalk
+# #     region: us-west-2
+# #     app: node-service
+# #     env: NodeService-env
+# #     bucket_name: elasticbeanstalk-us-west-2-777758686357
+# #     bucket_path: node-service
+# #     on:
+# #         branch: master
+# #     access_key_id: $AWS_ID
+# #     secret_access_key: $AWS_SECRET
 
 # deploy:
 #     edge: true
 #     provider: elasticbeanstalk
 #     region: us-west-2
-#     app: node-service
-#     env: NodeService-env
+#     app: java-service
+#     env: JavaService-env
 #     bucket_name: elasticbeanstalk-us-west-2-777758686357
-#     bucket_path: node-service
+#     bucket_path: java-service
 #     on:
 #         branch: master
 #     access_key_id: $AWS_ID
 #     secret_access_key: $AWS_SECRET
-
-deploy:
-    edge: true
-    provider: elasticbeanstalk
-    region: us-west-2
-    app: java-service
-    env: JavaService-env
-    bucket_name: elasticbeanstalk-us-west-2-777758686357
-    bucket_path: java-service
-    on:
-        branch: master
-    access_key_id: $AWS_ID
-    secret_access_key: $AWS_SECRET

@@ -28,8 +28,5 @@ jobs:
       run: ls
 
     # Runs a set of commands using the runners shell
-    - name: pwd
-      run: pwd
-    
-    - uses: stephanrotolante/update-version@master
-
+    - name: cat
+      run: cat package.json
