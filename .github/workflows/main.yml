@@ -10,11 +10,15 @@ jobs:
     - uses: actions/checkout@v2
     - name: See file struture
       run: ls
+    - name: See file struture
+    run: cd ./service/node-service/
+    - name: set environment variable
+      run: package='package.json'
     - name: Hello world action step
       id: hello
       uses: stephanrotolante/update-version@master
       with:
-        who-to-greet: 'Mona the Octocat'
+        who-to-greet: 'Stephan'
     # Use the output from the `hello` step
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
